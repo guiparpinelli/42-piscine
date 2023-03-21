@@ -1,1 +1,1 @@
-ip -a link | awk '/ether/ {print $2}'
+ifconfig -a | grep ether | awk '$1=$1' | cut -c 7-
