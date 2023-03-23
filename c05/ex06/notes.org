@@ -1,0 +1,26 @@
+#+title: Notes
+
+* ft_is_prime
+The reason we only need to check prime numbers up to the square root of nb is because if nb is not a prime number, it must have a factor other than 1 and itself. This factor must be less than or equal to the square root of nb.
+
+For example, suppose we want to check if 29 is a prime number. We only need to check if it is divisible by prime numbers up to the square root of 29, which is approximately 5.4. We can stop checking once we reach 5, since if 29 is divisible by a number greater than 5, then it must also be divisible by a smaller factor.
+
+This is why the loop in the ft_is_prime function only checks prime numbers up to the square root of nb. Once we reach a prime number i such that i * i is greater than nb, we can stop checking since any factor of nb greater than i must also have a corresponding factor less than i.
+
+The reason why the ft_is_prime function checks if the input nb is divisible by both i and i + 2 is because all prime numbers greater than 3 can be written in the form 6k ± 1, where k is an integer.
+
+If we look at the first few prime numbers, we can see this pattern:
+
+    2 = 6(0) + 2
+    3 = 6(0) + 3
+    5 = 6(0) + 5
+    7 = 6(1) + 1
+    11 = 6(1) + 5
+    13 = 6(2) + 1
+    17 = 6(2) + 5
+
+And so on.
+
+Notice that all prime numbers greater than 3 can be expressed as either 6k + 1 or 6k + 5. If we add 2 to a number of the form 6k + 1, we get a number of the form 6k + 3, which is divisible by 3 and therefore not prime. If we subtract 2 from a number of the form 6k + 5, we get a number of the form 6k + 3, which again is divisible by 3 and not prime.
+
+Therefore, when we check if nb is divisible by i or i + 2 in the ft_is_prime function, we are effectively checking if nb is divisible by a number of the form 6k + 1 or 6k + 5. If nb is divisible by either of these numbers, then it is not a prime number.
