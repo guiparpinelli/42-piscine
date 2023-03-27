@@ -3,12 +3,28 @@
 
 int ft_strlen(char *str);
 
-int main(int argc, char *argv[]) {
+void ft_strlen_test(char *str) {
+  int size;
+  int ft_size;
 
-  if (argc == 1 || argc > 2)
-    return 1;
+  size = strlen(str);
+  ft_size = ft_strlen(str);
+  if (size != ft_size)
+    printf("> KO, return value of ft_strlen differs from expected. expected: "
+           "%d, got: %d\n",
+           size, ft_size);
+  else
+    printf("> OK. result: %d\n", ft_size);
+}
 
-  printf("strlen: %lu\n", strlen(argv[1]));
-  printf("ft_strlen: %d\n", ft_strlen(argv[1]));
-  return 0;
+int main(void) {
+  char *str;
+
+  str = "";
+  ft_strlen_test(str);
+  str = "Test";
+  ft_strlen_test(str);
+  str = "Testing mored and more and more and more and more and more.";
+  ft_strlen_test(str);
+  return (0);
 }

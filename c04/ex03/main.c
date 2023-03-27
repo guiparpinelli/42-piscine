@@ -1,12 +1,44 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int ft_atoi(char *str);
 
-int main(int argc, char *argv[]) {
+void ft_atoi_like_test(char *str) {
+  int buff;
+  int ft_buff;
 
-  if (argc == 1 || argc > 2)
-    return 1;
+  buff = atoi(str);
+  ft_buff = ft_atoi(str);
+  if (buff != ft_buff)
+    printf("> KO, invalid int value returned. expected: %d got: %d\n", buff,
+           ft_buff);
+  else
+    printf("> OK. result: %d\n", ft_buff);
+}
 
-  printf("ft_atoi: %d\n", ft_atoi(argv[1]));
-  return 0;
+void ft_atoi_unlike_test(char *str, int expected_result) {
+  int ft_buff;
+
+  ft_buff = ft_atoi(str);
+  if (ft_buff != expected_result)
+    printf("> KO, invalid int value returned expected: %d got: %d\n",
+           expected_result, ft_buff);
+  else
+    printf("> OK, result: %d\n", ft_buff);
+}
+
+int main(void) {
+  char *str;
+
+  // quando o comportamento e igual ao de atoi
+  str = " \n \t \r \v +1234567asd";
+  ft_atoi_like_test(str);
+  str = " \n \t\f\r \v -1234b67asd";
+  ft_atoi_like_test(str);
+  // quando o comportamento e diferente ao de atoi
+  str = " \n \t \r \v --+-+-+-2147483648asd";
+  ft_atoi_unlike_test(str, -2147483648);
+  str = " \n \t\f\r \v -++-+-++1234b67asd";
+  ft_atoi_unlike_test(str, -1234);
+  return (0);
 }
