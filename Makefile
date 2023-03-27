@@ -7,5 +7,6 @@ help:             ## Show the help.
 
 .PHONY: clean
 clean:            ## Clean unused files.
+	@find ./ -name 'user_exe' -print -exec rm -f {} \;
 	@find ./ -name '*.out' -print -exec rm -f {} \;
 	@find ./ -name '*~' -print -exec rm -f {} \;
