@@ -22,11 +22,10 @@ find "$path" -type d -exec sh -c '
 ' sh "$eval_path" {} +
 
 # Loop through all subdirectories in the evaluated project path and compile `*.c` files into user_exe
-for dir in "$eval_path"/*/; do
-  echo "testing $dir"
+for dir in "$eval_path"/ex*/; do
   if [ -n "$(find "$dir" -maxdepth 1 -type f -name "*.c" -print -quit)" ]; then
-    echo "Compiling *.c files in $dir to user_exe"
-    # cc -Wall -Wextra -Werror "$dir"*.c -o user_exe
-    read -p "Press enter to continue or Ctrl+C to abort" -n 1 -r
+    echo "Compiling $(basename $dir) to user_exe"
+    cc -Wall -Wextra -Werror "$dir"*.c -o user_exe
+    read -rp "Press enter to continue or Ctrl+C to abort" input
   fi
 done
