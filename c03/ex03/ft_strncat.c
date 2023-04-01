@@ -17,7 +17,9 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 */
-char *ft_strncat(char *dest, char *src, unsigned int nb) {
+char *
+ft_strncat (char *dest, char *src, unsigned int nb)
+{
   int i;
   int dest_end;
 
@@ -25,11 +27,12 @@ char *ft_strncat(char *dest, char *src, unsigned int nb) {
   dest_end = 0;
   while (dest[dest_end])
     dest_end++;
-  while (src[i] && nb--) {
-    dest[dest_end] = src[i];
-    dest_end++;
-    i++;
-  }
+  while (src[i] && nb--)
+    {
+      dest[dest_end] = src[i];
+      dest_end++;
+      i++;
+    }
   dest[dest_end] = '\0';
   return (dest);
 }

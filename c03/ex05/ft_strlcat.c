@@ -16,7 +16,9 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 */
-int size_sum(char *dest, char *src) {
+int
+size_sum (char *dest, char *src)
+{
   int len_src;
   int len_dest;
 
@@ -29,7 +31,9 @@ int size_sum(char *dest, char *src) {
   return (len_src + len_dest);
 }
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size) {
+unsigned int
+ft_strlcat (char *dest, char *src, unsigned int size)
+{
   int i;
   int space;
   int result;
@@ -38,7 +42,7 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size) {
   while (dest[i])
     ++i;
   space = (size - i) - 1;
-  result = size_sum(dest, src);
+  result = size_sum (dest, src);
   while (*src && space--)
     dest[i++] = *src++;
   dest[i] = '\0';

@@ -1,4 +1,6 @@
-int ft_strlen(char *str) {
+int
+ft_strlen (char *str)
+{
   int len;
 
   len = 0;

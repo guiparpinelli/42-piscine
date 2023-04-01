@@ -1,8 +1,10 @@
-void ft_putstr(char *str);
+void ft_putstr (char *str);
 
-int main(void) {
+int
+main (void)
+{
   char *str = "alow galera\n";
 
-  ft_putstr(str);
+  ft_putstr (str);
   return (0);
 }

@@ -1,25 +1,30 @@
 #include "ft_stock_str.h"
 #include <malloc.h>
 
-void ft_show_tab(struct s_stock_str *par);
+void ft_show_tab (struct s_stock_str *par);
 
-char *ft_strdup(char *src) {
+char *
+ft_strdup (char *src)
+{
   char *dest;
   unsigned int n;
 
   n = 0;
   while (src[n] != '\0')
     ++n;
-  dest = malloc(n + 1);
-  if (dest != NULL) {
-    dest[n] = '\0';
-    while (n--)
-      dest[n] = src[n];
-  }
+  dest = malloc (n + 1);
+  if (dest != NULL)
+    {
+      dest[n] = '\0';
+      while (n--)
+        dest[n] = src[n];
+    }
   return (dest);
 }
 
-unsigned int ft_strlen(char *str) {
+unsigned int
+ft_strlen (char *str)
+{
   unsigned int n;
 
   n = 0;
@@ -28,34 +33,43 @@ unsigned int ft_strlen(char *str) {
   return (n);
 }
 
-void init_stock_str(struct s_stock_str *s, char *str) {
-  if (str == NULL) {
-    s->size = 0;
-    s->str = NULL;
-    s->copy = NULL;
-  } else {
-    s->str = str;
-    s->size = ft_strlen(str);
-    s->copy = ft_strdup(str);
-  }
+void
+init_stock_str (struct s_stock_str *s, char *str)
+{
+  if (str == NULL)
+    {
+      s->size = 0;
+      s->str = NULL;
+      s->copy = NULL;
+    }
+  else
+    {
+      s->str = str;
+      s->size = ft_strlen (str);
+      s->copy = ft_strdup (str);
+    }
 }
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av) {
+struct s_stock_str *
+ft_strs_to_tab (int ac, char **av)
+{
   struct s_stock_str *ret;
 
-  ret = malloc((ac + 1) * sizeof(struct s_stock_str));
+  ret = malloc ((ac + 1) * sizeof (struct s_stock_str));
   if (ret == NULL)
     return (NULL);
-  init_stock_str(&ret[ac], NULL);
+  init_stock_str (&ret[ac], NULL);
   while (--ac >= 0)
-    init_stock_str(&ret[ac], av[ac]);
+    init_stock_str (&ret[ac], av[ac]);
   return (ret);
 }
 
-int main() {
-  char *strings[] = {"string1", "string2", "stringmuitomaior1", "fim", "",
-                     "loucura", "issae"};
-  struct s_stock_str *tab = ft_strs_to_tab(7, strings);
+int
+main ()
+{
+  char *strings[] = { "string1", "string2", "stringmuitomaior1", "fim", "",
+                      "loucura", "issae" };
+  struct s_stock_str *tab = ft_strs_to_tab (7, strings);
 
-  ft_show_tab(tab);
+  ft_show_tab (tab);
 }

@@ -1,22 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gparpine <gparpine@student.42porto.co      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 16:27:55 by gparpine          #+#    #+#             */
-/*   Updated: 2023/03/15 16:28:40 by gparpine         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-void	ft_ultimate_div_mod(int *a, int *b)
+void
+ft_ultimate_div_mod (int *a, int *b)
 {
-	int	div;
-	int	mod;
+  int div;
+  int mod;
 
-	div = *a / *b;
-	mod = *a % *b;
-	*a = div;
-	*b = mod;
+  div = *a / *b;
+  mod = *a % *b;
+  *a = div;
+  *b = mod;
 }

@@ -18,7 +18,9 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 */
-char *ft_strstr(char *str, char *to_find) {
+char *
+ft_strstr (char *str, char *to_find)
+{
   int i;
   int cursor;
   int lookup;
@@ -26,16 +28,18 @@ char *ft_strstr(char *str, char *to_find) {
   i = 0;
   if (!to_find)
     return (str);
-  while (str[i]) {
-    cursor = i;
-    lookup = 0;
-    while (str[cursor] == to_find[lookup] && to_find[lookup]) {
-      cursor++;
-      lookup++;
+  while (str[i])
+    {
+      cursor = i;
+      lookup = 0;
+      while (str[cursor] == to_find[lookup] && to_find[lookup])
+        {
+          cursor++;
+          lookup++;
+        }
+      if (!to_find[lookup])
+        return (str + i);
+      i++;
     }
-    if (!to_find[lookup])
-      return (str + i);
-    i++;
-  }
   return (NULL);
 }

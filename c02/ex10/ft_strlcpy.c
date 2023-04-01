@@ -22,7 +22,9 @@ int main(void) {
   return 0;
 }
 */
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size) {
+unsigned int
+ft_strlcpy (char *dest, char *src, unsigned int size)
+{
   int len;
 
   len = 0;

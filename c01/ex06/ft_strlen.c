@@ -1,23 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gparpine <gparpine@student.42porto.co      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 17:52:30 by gparpine          #+#    #+#             */
-/*   Updated: 2023/03/15 17:56:07 by gparpine         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-int	ft_strlen(char *str)
+int
+ft_strlen (char *str)
 {
-	int	length;
+  int length;
 
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
+  length = 0;
+  while (str[length] != '\0')
+    {
+      length++;
+    }
+  return (length);
 }

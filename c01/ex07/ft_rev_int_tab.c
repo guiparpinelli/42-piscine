@@ -1,21 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gparpine <gparpine@student.42porto.co      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 17:56:54 by gparpine          #+#    #+#             */
-/*   Updated: 2023/03/15 18:09:17 by gparpine         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-void	ft_rev_int_tab(int *tab, int size)
+void
+ft_rev_int_tab (int *tab, int size)
 {
-	return ;
+  return;
 }
 
-int	main()
+int
+main ()
 {
-	return 0;
+  return 0;
 }

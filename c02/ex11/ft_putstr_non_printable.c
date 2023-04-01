@@ -18,30 +18,41 @@ int main() {
  * to standard output. Following, it applies the same logic above but for the
  * last four bits of the given byte and write it to standard output.
  */
-void write_hex(char byte) {
+void
+write_hex (char byte)
+{
   char c;
 
-  write(1, "\\", 2);
-  if (byte / 16 > 9) {
-    c = byte / 16 + 87;
-  } else {
-    c = byte / 16 + 48;
-  }
-  write(1, &c, 1);
-  if (byte % 16 > 9) {
-    c = byte % 16 + 87;
-  } else {
-    c = byte % 16 + 48;
-  }
-  write(1, &c, 1);
+  write (1, "\\", 2);
+  if (byte / 16 > 9)
+    {
+      c = byte / 16 + 87;
+    }
+  else
+    {
+      c = byte / 16 + 48;
+    }
+  write (1, &c, 1);
+  if (byte % 16 > 9)
+    {
+      c = byte % 16 + 87;
+    }
+  else
+    {
+      c = byte % 16 + 48;
+    }
+  write (1, &c, 1);
 }
 
-void ft_putstr_non_printable(char *str) {
-  while (*str) {
-    if ((*str >= 0 && *str < 32) || *str == 127)
-      write_hex(*str);
-    else
-      write(1, str, 1);
-    ++str;
-  }
+void
+ft_putstr_non_printable (char *str)
+{
+  while (*str)
+    {
+      if ((*str >= 0 && *str < 32) || *str == 127)
+        write_hex (*str);
+      else
+        write (1, str, 1);
+      ++str;
+    }
 }
