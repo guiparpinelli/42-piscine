@@ -10,4 +10,4 @@ repos:
     hooks:
       - id: clang-format
         types_or: [c]
-        args: [--style GNU, -i]
+        args: [--style=GNU, -i]
